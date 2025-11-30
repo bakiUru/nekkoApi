@@ -14,3 +14,7 @@ app.listen(PORT, async()=>{
         console.log("Error de conexion con la BD")
     }
 })
+
+app.get('/', async (req,res)=>{
+    res.send("Conectado al Servidor").status(200)
+})
