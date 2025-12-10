@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { AppstoreOutlined, MailOutlined, SettingOutlined, HomeOutlined, LoginOutlined, UserOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { Menu, Flex } from 'antd';
 import CartButton from '../Cart/CartButton';
+import './navBar.css';
 
 
 
@@ -54,7 +55,7 @@ const navItems = [
         key: 'alipay',
         label: (
             <a href="https://www.instagram.com/nekko.uy" target="_blank" rel="noopener noreferrer">
-                Visita nuestro Perfil en Instagram
+                ¡ Seguinos en Instagram !
             </a>
         ),
     },
@@ -81,11 +82,17 @@ const NavBar = () => {
         setCurrent(e.key);
     };
     return (
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={navItems} style={{ flex: 1, minWidth: 0 }} />
-            <CartButton />
-            <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={userItems} style={{ minWidth: '300px', justifyContent: 'flex-end' }} />
-        </div>
+        <>
+            <Flex className="containerNav">
+                <Flex className="containerNavMenu" >
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={navItems} style={{ flex: 1, minWidth: 0 }} />
+                </Flex>
+                <CartButton />
+
+                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={userItems} style={{ minWidth: '300px', justifyContent: 'flex-end' }} />
+
+            </Flex>
+        </>
     );
 };
 export default NavBar;

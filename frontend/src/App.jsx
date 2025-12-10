@@ -6,6 +6,7 @@ import { Flex } from 'antd'
 import NavBar from './components/NavBar/NavBar'
 import { theme } from 'antd'
 import { Menu } from 'antd'
+import Home from './components/Home/Home'
 const { colorBgContainer, borderRadiusLG } = theme
 const { Header, Footer, Sider, Content } = Layout
 
@@ -31,6 +32,7 @@ const App = () => {
             }}>
 
             <h1>Nekko Ecommerce</h1>
+            <Home></Home>
 
           </Content>
           <Footer>
