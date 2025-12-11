@@ -7,6 +7,8 @@ import NavBar from './components/NavBar/NavBar'
 import { theme } from 'antd'
 import Home from './components/Home/Home'
 import Services from './components/Services/Services'
+import About from './components/About/About'
+import Store from './components/Store/Store'
 const { colorBgContainer, borderRadiusLG } = theme
 const { Header, Footer, Sider, Content } = Layout
 
@@ -54,7 +56,7 @@ const App = () => {
             borderRadius: borderRadiusLG,
           }}>
 
-          <Typography.Title level={2}>NOSOTROS</Typography.Title>
+          <About></About>
         </Content>
         <Content
           style={{
@@ -76,7 +78,7 @@ const App = () => {
             borderRadius: borderRadiusLG,
           }}>
 
-          <Typography.Title level={2}>Store</Typography.Title>
+          <Store></Store>
         </Content>
         <Footer>
           <h1>Footer</h1>
