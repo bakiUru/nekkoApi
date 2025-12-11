@@ -1,0 +1,8 @@
+.corrusel {
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+    border: 2px solid #e5a0a0ff;
+    border-radius: 10px;
+}

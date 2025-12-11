@@ -88,7 +88,6 @@ const NavBar = () => {
                     <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={navItems} style={{ flex: 1, minWidth: 0 }} />
                 </Flex>
                 <CartButton />
-
                 <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={userItems} style={{ minWidth: '300px', justifyContent: 'flex-end' }} />
 
             </Flex>
