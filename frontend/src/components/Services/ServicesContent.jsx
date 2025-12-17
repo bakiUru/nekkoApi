@@ -1,13 +1,5 @@
-import { Button, Card, Carousel, Flex, Typography } from 'antd';
-const cardStyle = {
-    width: '90%',
+import { Button, Card, Flex } from 'antd';
 
-};
-const imgStyle = {
-    display: 'block',
-    width: 400,
-    margin: '10px'
-};
 //utilizar la misma 
 const services = [{
     title: "Personalizacion de Prendas",
@@ -33,52 +25,61 @@ const services = [{
     description: "Diseños profesionales, resistentes y de alta visibilidad para vidrieras, carteles promocionales, señalética y branding comercial 💼🔎✨¡Atraé más clientes con vinilos impactantes que transforman tu local! 🚀🟡",
     image: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
 }]
+
 console.log(services.length)
+
 function ServicesContent() {
     return (
+        <div className="services-content">
+            {services.map((service, id) => (
+                <Card key={service.title} className="service-card" styles={{ body: { padding: 0, overflow: 'hidden' } }}>
+                    <Flex justify="space-between">
 
-        services.map((service, id) => (
-            <Card key={service.title} style={cardStyle} styles={{ body: { padding: 0, overflow: 'hidden' } }}>
-                <Flex justify="space-between">
+                        {id % 2 === 0 ? (
+                            <img
+                                draggable={false}
+                                alt={service.title}
+                                src={service.image}
+                                className="service-image" />
+                        ) : (
+                            <br></br>
+                        )}
 
-                    {id % 2 === 0 ? (
-                        <img
-                            draggable={false}
-                            alt="avatar"
-                            src={service.image}
-                            style={imgStyle} />
-                    ) : (
-                        <br></br>
-                    )}
+                        <Flex vertical align="flex-start" justify="space-between" className="service-content">
+                            <h3 className="service-title">
+                                {service.title}
+                            </h3>
+                            <h4 className="service-subtitle">
+                                {service.subtitle}
+                            </h4>
+                            <p className="service-description">
+                                {service.description}
+                            </p>
 
-                    <Flex vertical align="flex-start" justify="space-between" style={{ padding: 32 }}>
-                        <Typography.Title level={2}>
-                            {service.title}
-                        </Typography.Title>
-                        <Typography.Title level={4}>
-                            {service.subtitle}
-                        </Typography.Title>
-                        <Typography.Title level={5}>
-                            {service.description}
-                        </Typography.Title>
+                            <Button
+                                type="primary"
+                                href="https://ant.design"
+                                target="_blank"
+                                className="service-button"
+                                style={{ marginTop: 16, width: '50%', alignSelf: 'center' }}
+                            >
+                                Cotización
+                            </Button>
+                        </Flex>
+                        {id % 2 !== 0 ? (
+                            <img
+                                draggable={false}
+                                alt={service.title}
+                                src={service.image}
+                                className="service-image" />
+                        ) : (
+                            <br></br>
+                        )}
 
-                        <Button type="primary" href="https://ant.design" target="_blank" style={{ marginTop: 16, width: '50%', alignSelf: 'center' }}>
-                            Cotizacion
-                        </Button>
                     </Flex>
-                    {id % 2 !== 0 ? (
-                        <img
-                            draggable={false}
-                            alt="avatar"
-                            src={service.image}
-                            style={imgStyle} />
-                    ) : (
-                        <br></br>
-                    )}
-
-                </Flex>
-            </Card >
-        ))
+                </Card >
+            ))}
+        </div>
     )
 }
 

@@ -1,29 +1,31 @@
 .cartButton {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #40a9ff;
-    color: white;
-    font-size: 20px;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background-color: #40a9ff !important;
+    color: white !important;
+    font-size: 20px !important;
     cursor: pointer;
-    border: none;
-    border-radius: 50%;
+    border: none !important;
     transition: all 0.3s ease;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
 
-    &:hover {
-        background-color: #40a9ff;
-    }
+.cartButton:hover {
+    background-color: #1890ff !important;
+    transform: scale(1.05);
+}
 
-    &:active {
-        background-color: #40a9ff;
-    }
+.cartButton:active {
+    background-color: #096dd9 !important;
+}
 
-    &:focus {
-        background-color: #40ff90;
-    }
+.cartButton:focus {
+    background-color: #40a9ff !important;
 }
 
 .cartButtonContainer {
@@ -31,9 +33,22 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 0px 10px;
+    padding: 0 !important;
+    margin: 0 !important;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: transparent !important;
+    background: none !important;
+}
 
+/* Sobrescribir estilos de Ant Design */
+.cartButtonContainer .ant-btn {
+    background-color: #40a9ff !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
 
+.cartButtonContainer .ant-btn::before,
+.cartButtonContainer .ant-btn::after {
+    display: none !important;
+    background: none !important;
 }

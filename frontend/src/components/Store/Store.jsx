@@ -1,13 +1,17 @@
 import React from 'react'
 import { Typography } from 'antd'
+import './store.css'
 
 function Store() {
     return (
-        <div>
-            <Typography.Title level={2} style={{ textAlign: 'center' }}>Store</Typography.Title>
-            <Typography.Title level={2} style={{ textAlign: 'center' }}>Store</Typography.Title>
-            <Typography.Title level={2} style={{ textAlign: 'center' }}>Store</Typography.Title>
-            <Typography.Title level={2} style={{ textAlign: 'center' }}>Store</Typography.Title>
+        <div className="store-container">
+            <h2>Tienda</h2>
+            <div className="store-content">
+                <p className="store-message">
+                    ¡Próximamente! Estamos preparando nuestra tienda online con productos increíbles para vos.
+                    Mientras tanto, podés contactarnos directamente para hacer tu pedido personalizado.
+                </p>
+            </div>
         </div>
     )
 }

@@ -83,14 +83,15 @@ const NavBar = () => {
     };
     return (
         <>
-            <Flex className="containerNav">
-                <Flex className="containerNavMenu" >
-                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={navItems} style={{ flex: 1, minWidth: 0 }} />
-                </Flex>
-                <CartButton />
-                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={userItems} style={{ minWidth: '300px', justifyContent: 'flex-end' }} />
-
-            </Flex>
+            <div className="containerNav" style={{ backgroundColor: 'white' }}>
+                <div className="containerNavMenu" style={{ backgroundColor: 'white' }}>
+                    <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={navItems} style={{ flex: 1, minWidth: 0, backgroundColor: 'white', border: 'none' }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', backgroundColor: 'white', height: '100%', padding: '0 10px' }}>
+                    <CartButton />
+                </div>
+                <Menu onClick={onClick} selectedKeys={[current]} mode="horizontal" items={userItems} style={{ minWidth: '300px', justifyContent: 'flex-end', backgroundColor: 'white', border: 'none' }} />
+            </div>
         </>
     );
 };

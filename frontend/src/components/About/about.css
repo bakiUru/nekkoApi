@@ -1,0 +1,92 @@
+/* Fuente base */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+.about-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 80px 40px;
+    background: linear-gradient(180deg, #fafafa, #ffffff);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+.about-container h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #222;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.about-container h2::after {
+    content: '';
+    width: 70px;
+    height: 4px;
+    background: #f5c400;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* Texto general */
+.about-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    text-align: center;
+}
+
+/* Destacar palabras clave */
+.about-text strong {
+    color: #000;
+    font-weight: 600;
+}
+
+/* Separación entre párrafos */
+.about-text p {
+    margin-bottom: 22px;
+}
+
+/* Bloque destacado final */
+.about-highlight {
+    margin-top: 40px;
+    padding: 35px;
+    background: #fff9e6;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #222;
+}
+
+/* Emojis o slogan */
+.about-highlight span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 15px;
+    }
+
+    .about-container h2 {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-highlight {
+        font-size: 1.1rem;
+        padding: 25px;
+    }
+}

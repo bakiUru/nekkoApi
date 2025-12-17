@@ -1,3 +1,25 @@
-body {
-    background-color: #b63232;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal de la app */
+.app-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+    /* fondo general */
+}
+
+/* Contenido centrado */
+.app-content {
+    width: 100%;
+    max-width: 1280px;
+    /* ancho ideal tienda online */
+    padding: 20px 24px;
+    background-color: #ffffff;
 }

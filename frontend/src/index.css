@@ -18,8 +18,11 @@
 
 body {
   font-family: var(--prymary-font-family);
-  background-color: var(--bacground-color);
+  background-color: #fafafa;
   color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -30,9 +33,11 @@ a {
 }
 
 .container {
-  padding-left: 10%;
-  padding-right: 10%;
-  color: #f0f0f0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: #333;
 }
 
 .btn {
