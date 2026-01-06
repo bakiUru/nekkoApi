@@ -24,7 +24,22 @@ const services = [{
     subtitle: "🏪✨ Cartelería en Vinilo para Impulsar tu Negocio ✨📣",
     description: "Diseños profesionales, resistentes y de alta visibilidad para vidrieras, carteles promocionales, señalética y branding comercial 💼🔎✨¡Atraé más clientes con vinilos impactantes que transforman tu local! 🚀🟡",
     image: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
-}]
+},
+{
+    title: "Impresión de Fotografías",
+    subtitle: "📸✨ Imprimí tus Momentos Más Especiales ✨🖼️",
+    description: "Dale vida a tus recuerdos con impresiones fotográficas de alta calidad, colores vibrantes y excelente definición. Ideales para cuadros, regalos, álbumes o decoración del hogar 🏡🎁💖 Convertí tus fotos favoritas en recuerdos que duran para siempre ✨📷",
+    image: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+},
+{
+    title: "Tarjetas Personalizadas",
+    subtitle: "💌✨ Tarjetas Personalizadas para Cada Ocasión ✨🎉",
+    description: "Creá tarjetas únicas para cumpleaños, eventos, invitaciones, agradecimientos o marcas personales. Diseños a medida, impresiones de calidad y detalles que marcan la diferencia 🎨💖📄 ¡Transmití emociones con tarjetas hechas especialmente para vos! ✨✍️",
+    image: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+}
+
+
+]
 
 console.log(services.length)
 
