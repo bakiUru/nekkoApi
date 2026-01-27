@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Button, Card, Flex } from 'antd';
+import BudgetModal from '../Modal Budget/BudgetModal';
 
 //utilizar la misma 
 const services = [{
@@ -44,6 +46,19 @@ const services = [{
 console.log(services.length)
 
 function ServicesContent() {
+    const [selectedService, setSelectedService] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = (serviceTitle) => {
+        setSelectedService(serviceTitle);
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        setSelectedService(null);
+    };
+
     return (
         <div className="services-content">
             {services.map((service, id) => (
@@ -73,10 +88,9 @@ function ServicesContent() {
 
                             <Button
                                 type="primary"
-                                href="https://ant.design"
-                                target="_blank"
                                 className="service-button"
                                 style={{ marginTop: 16, width: '50%', alignSelf: 'center' }}
+                                onClick={() => handleOpenModal(service.title)}
                             >
                                 Cotización
                             </Button>
@@ -94,6 +108,15 @@ function ServicesContent() {
                     </Flex>
                 </Card >
             ))}
+
+            {modalOpen && selectedService && (
+                <BudgetModal
+                    service={selectedService}
+                    open={modalOpen}
+                    onOk={handleCloseModal}
+                    onCancel={handleCloseModal}
+                />
+            )}
         </div>
     )
 }

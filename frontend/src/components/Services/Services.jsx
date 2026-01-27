@@ -1,5 +1,4 @@
-import React from 'react';
-import { Button, Card, Carousel, Flex, Typography } from 'antd';
+import { Flex } from 'antd';
 import ServicesContent from './ServicesContent';
 import './services.css';
 

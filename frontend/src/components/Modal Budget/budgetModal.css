@@ -1,0 +1,66 @@
+.modal-content {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.contact-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+.contact-title::after {
+    content: "";
+    display: table;
+    clear: both;
+    width: 70% !important;
+    height: 1px;
+    background-color: #222;
+}
+
+.contact-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 12px;
+}
+
+/* Botón de cotización */
+.budget-button {
+    background: linear-gradient(135deg, #f5c400, #f5a623);
+    border: none;
+    color: #222;
+    font-weight: 600;
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.budget-button:hover {
+    background: linear-gradient(135deg, #f5a623, #f5c400);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(245, 196, 0, 0.4);
+}
+
+.cancel-button {
+    background: #060606;
+    border: none;
+    color: #fffefe;
+    font-weight: 600;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cancel-button:hover {
+    background: #060606;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(245, 196, 0, 0.4);
+}

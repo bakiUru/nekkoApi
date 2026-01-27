@@ -23,7 +23,7 @@ const ContactForm = () => {
                     Escribinos y te respondemos a la brevedad 💛
                 </Text>
 
-                <Card className="contact-card" bordered={false}>
+                <Card className="contact-card">
                     <Form
                         layout="vertical"
                         onFinish={onFinish}

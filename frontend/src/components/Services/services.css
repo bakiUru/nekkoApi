@@ -5,7 +5,7 @@
 .services-container {
     font-family: 'Poppins', sans-serif;
     padding: 80px 40px;
-    background: linear-gradient(180deg, #ffffff, #fafafa);
+    /*background: linear-gradient(180deg, #ffffff, #fafafa);*/
     max-width: 1200px;
     margin: 0 auto;
 }
