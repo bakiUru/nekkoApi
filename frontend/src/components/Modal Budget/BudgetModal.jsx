@@ -149,6 +149,7 @@ const BudgetModal = ({ service, open, onOk, onCancel }) => {
             <Button
                 type="primary"
                 className="budget-button"
+                form="budget-form"
                 onClick={onOk}
             >
                 Enviar
