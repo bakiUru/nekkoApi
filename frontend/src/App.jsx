@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Layout, Flex, Typography } from 'antd'
+import { motion } from 'motion/react'
 import './app.css'
 import 'antd/dist/antd.css'
 
@@ -10,6 +11,7 @@ import About from './components/About/About'
 import Store from './components/Store/Store'
 import ContactForm from './components/ContactForm/ContactForm'
 import LoginForm from './components/Login/LoginForm'
+import RegisterForm from './components/Register/RegisterForm'
 
 const { Header, Footer, Content } = Layout
 
@@ -46,12 +48,20 @@ const App = () => {
                     vertical
                     style={{ maxWidth: '1200px', margin: '0 auto' }}
                   >
-                    <Typography.Title
-                      level={1}
-                      style={{ textAlign: 'center', fontSize: '3rem' }}
+                    <motion.div
+                      initial={{ opacity: 0, y: -50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 1, delay: 0.3, ease: 'easeInOut' }}
                     >
-                      Nekko Ecommerce
-                    </Typography.Title>
+                      <Typography.Title
+                        level={1}
+                        style={{ textAlign: 'center', fontSize: '3rem' }}
+                        className='title'
+                      >
+                        Nekko Ecommerce
+
+                      </Typography.Title>
+                    </motion.div>
 
                     <Typography.Title
                       level={3}
@@ -108,7 +118,8 @@ const App = () => {
 
           {/* LOGIN */}
           <Route path="/login" element={<LoginForm />} />
-
+          {/* REGISTER */}
+          <Route path="/register" element={<RegisterForm />} />
         </Routes>
       </Layout>
     </Router>

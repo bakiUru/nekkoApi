@@ -3,8 +3,10 @@ import { Button, Flex, Modal, message, Typography } from 'antd';
 import { Form, Input, Upload } from 'antd';
 import { PhoneOutlined, UploadOutlined, UserOutlined } from '@ant-design/icons';
 import './budgetModal.css';
+import { notifySuccess, notifyError } from './Notification';
 
 const { Text } = Typography
+
 const props = {
     name: 'file',
     action: 'https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload',
@@ -34,24 +36,33 @@ const props = {
 const lineStyle = {
     lineHeight: '28px',
 };
-const sharedContent = (
+
+
+
+const sharedContent = (service, formInstance, onFinish, onFinishFailed) => (
     <>
         <Flex gap="middle">
             <div className='contact-title'>
-                Hola Nekko!, necesito Un presupuesto 📋 Gracias
+                ¡Hola Nekko! necesito un presupuesto 📋
+                sobre {service} ¡Gracias!
             </div>
 
         </Flex>
         <Flex gap="middle">
             <Form
+                form={formInstance}
                 name="budget-form"
                 layout="vertical"
                 className="contact-form"
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
             >
                 <Form.Item
                     label="Nombre"
                     name="name"
-                    rules={[{ required: true, message: 'Ingresá tu nombre' }]}
+                    rules={[{ required: true, message: 'Ingresá tu nombre' },
+                    { pattern: /^[a-zA-Z]+$/, message: 'Ingresá un nombre válido' }
+                    ]}
                 >
                     <Input
                         size="large"
@@ -65,18 +76,18 @@ const sharedContent = (
                     name="phone"
                     rules={[
                         { required: true, message: 'Ingresá tu telefono' },
+                        { pattern: /^09[1-9]{1}[0-9]{6}$/, message: 'Ingresá un número de teléfono válido' }
                     ]}
                 >
                     <Input
                         size="large"
                         prefix={<PhoneOutlined />}
-                        placeholder="Tu telefono 099-999-111"
+                        placeholder="Tu telefono 09XXXXXXX"
                     />
                 </Form.Item>
                 <Form.Item
-                    label="Detalles "
+                    label="Detalles del pedido "
                     name="message"
-                    rules={[{ required: true, message: 'Escribí tu mensaje' }]}
                 >
                     <Input.TextArea
                         rows={4}
@@ -127,16 +138,43 @@ const stylesFn = info => {
             },
         };
     }
-    return {};
+
 };
 const BudgetModal = ({ service, open, onOk, onCancel }) => {
     const [modalFnOpen, setFnOpen] = useState(open);
-    const [form] = Form.useForm();
+    const [form] = Form.useForm(); // Hook de Ant Design para manejar el formulario
+
+    // Función que se ejecuta cuando el formulario es válido
+    const handleFormSubmit = (values) => {
+        console.log('Valores del formulario:', values);
+
+        // Mostrar notificación de éxito usando el componente reutilizable
+        notifySuccess(
+            '¡Presupuesto enviado! 🎉',
+            `Gracias por tu interés en ${service}. Te contactaremos pronto.`,
+            5
+        );
+
+        // Aquí puedes hacer lo que necesites con los valores
+        // Por ejemplo, enviarlos a una API
+        onOk(values); // Pasamos los valores al componente padre si es necesario
+    };
+
+    // Función que se ejecuta si hay errores de validación
+    function handleFormError(errorInfo) {
+        console.log('Errores de validación:', errorInfo);
+        message.error('Por favor completa todos los campos requeridos');
+    }
+
 
     useEffect(() => {
         setFnOpen(open);
-        console.log(service)
-    }, [open]);
+        console.log(service);
+        // Limpiar el formulario cuando se abre el modal
+        if (open) {
+            form.resetFields();
+        }
+    }, [open, form]);
 
     const footer = (
         <>
@@ -149,8 +187,10 @@ const BudgetModal = ({ service, open, onOk, onCancel }) => {
             <Button
                 type="primary"
                 className="budget-button"
-                form="budget-form"
-                onClick={onOk}
+                onClick={() => {
+                    // Trigger manual del submit del formulario
+                    form.submit();
+                }}
             >
                 Enviar
             </Button>
@@ -161,14 +201,14 @@ const BudgetModal = ({ service, open, onOk, onCancel }) => {
             <Modal
                 className="modal-content"
                 footer={footer}
-                title={`Presupuesto ${service}`}
+                title={`${service}`}
                 styles={stylesFn}
                 mask={{ enabled: true, blur: true }}
                 open={modalFnOpen}
                 onOk={onOk}
                 onCancel={onCancel}
             >
-                {sharedContent}
+                {sharedContent(service, form, handleFormSubmit, handleFormError)}
             </Modal>
         </Flex>
     );

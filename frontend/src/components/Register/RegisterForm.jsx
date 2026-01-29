@@ -1,11 +1,11 @@
 import React from 'react'
 import { Card, Form, Input, Button, Typography, Flex, Divider } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
-import './login_form.css'
+import './register_form.css'
 
 const { Title, Text } = Typography
 
-const LoginForm = () => {
+const RegisterForm = () => {
     const onFinish = (values) => {
         // Acá normalmente llamás a tu API
         // La respuesta debería indicar el rol: "admin" | "user"
@@ -21,23 +21,35 @@ const LoginForm = () => {
     }
 
     return (
-        <Flex className="login-wrapper" align="center" justify="center">
-            <Card className="login-card">
-                <Title level={3} className="login-title">
-                    Ingresar
+        <Flex className="register-wrapper" align="center" justify="center">
+
+            <Card className="register-card" >
+                <Typography.Title
+                    level={3}
+                    style={{
+                        color: '#666',
+                        textAlign: 'center',
+                        fontWeight: 400,
+                        marginBottom: '40px',
+                    }}
+                >
+                    Sumate a Nekko.uy 🐱
+                </Typography.Title>
+                <Title level={3} className="register-title">
+                    Registrarse
                 </Title>
 
-                <Text className="login-subtitle">
-                    Clientes y administradores
+                <Text className="register-subtitle">
+                    Ya tienes cuenta? <a href="/login">Inicia sesión</a>
                 </Text>
 
                 <Form
                     layout="vertical"
                     onFinish={onFinish}
-                    className="login-form"
+                    className="register-form"
                 >
                     <Form.Item
-                        label="Email o usuario"
+                        label=" Email o usuario"
                         name="email"
                         rules={[{ required: true, message: 'Campo obligatorio' }]}
                     >
@@ -60,20 +72,32 @@ const LoginForm = () => {
                         />
                     </Form.Item>
 
+                    <Form.Item
+                        label="Confirmar contraseña"
+                        name="password2"
+                        rules={[{ required: true, message: 'Campo obligatorio' }]}
+                    >
+                        <Input.Password
+                            size="large"
+                            prefix={<LockOutlined />}
+                            placeholder="••••••••"
+                        />
+                    </Form.Item>
+
                     <Button
                         type="primary"
                         htmlType="submit"
                         size="large"
                         block
-                        className="login-button"
+                        className="register-button"
                     >
-                        Acceder
+                        Registrarse
                     </Button>
                 </Form>
 
                 <Divider />
 
-                <Text className="login-footer">
+                <Text className="register-footer">
                     💛 NEKKO.UY · Acceso seguro
                 </Text>
             </Card>
@@ -81,4 +105,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default RegisterForm
