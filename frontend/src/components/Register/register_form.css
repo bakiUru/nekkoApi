@@ -43,3 +43,31 @@
     font-size: 0.9rem;
     color: #999;
 }
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .register-card {
+        max-width: 100%;
+        padding: 25px 20px;
+        border-radius: 12px;
+    }
+
+    .register-title {
+        font-size: 1.5rem;
+    }
+
+    .register-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .register-button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .register-card {
+        max-width: 400px;
+        padding: 35px 28px;
+    }
+}

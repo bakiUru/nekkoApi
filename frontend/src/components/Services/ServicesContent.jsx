@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button, Card, Flex } from 'antd';
+import { useViewport } from '../../contexts/ViewportContext';
 import BudgetModal from '../Modal Budget/BudgetModal';
 
 //utilizar la misma 
@@ -48,6 +49,7 @@ console.log(services.length)
 function ServicesContent() {
     const [selectedService, setSelectedService] = useState(null);
     const [modalOpen, setModalOpen] = useState(false);
+    const { isMobile } = useViewport();
 
     const handleOpenModal = (serviceTitle) => {
         setSelectedService(serviceTitle);

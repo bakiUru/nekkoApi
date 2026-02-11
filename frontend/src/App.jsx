@@ -12,6 +12,8 @@ import Store from './components/Store/Store'
 import ContactForm from './components/ContactForm/ContactForm'
 import LoginForm from './components/Login/LoginForm'
 import RegisterForm from './components/Register/RegisterForm'
+import Gallery from './components/Gallery/Gallery.jsx'
+import { ViewportProvider } from './contexts/ViewportContext'
 
 const { Header, Footer, Content } = Layout
 
@@ -78,15 +80,22 @@ const App = () => {
                     <Home />
                   </Flex>
                 </Content>
-
+                {/* About */}
                 <Content style={{ background: '#f9f9f9' }}>
                   <About />
                 </Content>
-
+                {/* Services */}
                 <Content style={{ background: 'white' }}>
-                  <Services />
+                  <ViewportProvider>
+                    <Services />
+                  </ViewportProvider>
                 </Content>
+                {/* Gallery */}
 
+                <Content style={{ background: '#f9f9f9' }}>
+                  <Gallery />
+                </Content>
+                {/* Store */}
                 <Content style={{ background: '#f9f9f9' }}>
                   <Store />
                 </Content>
@@ -115,7 +124,8 @@ const App = () => {
               </>
             }
           />
-
+          {/* Gallery - Completa */}
+          <Route path="/gallery" element={<Gallery />} />
           {/* LOGIN */}
           <Route path="/login" element={<LoginForm />} />
           {/* REGISTER */}

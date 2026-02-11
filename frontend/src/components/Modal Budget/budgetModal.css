@@ -64,3 +64,36 @@
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(245, 196, 0, 0.4);
 }
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 8px;
+    }
+
+    .contact-title {
+        font-size: 0.9rem;
+    }
+
+    .contact-subtitle {
+        font-size: 14px;
+    }
+
+    .budget-button,
+    .cancel-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .modal-content {
+        padding: 12px;
+    }
+
+    .budget-button,
+    .cancel-button {
+        padding: 11px 20px;
+    }
+}
