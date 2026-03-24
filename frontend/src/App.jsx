@@ -44,7 +44,7 @@ const App = () => {
             element={
               <>
                 {/* Hero */}
-                <Content style={{ padding: '60px 20px', background: 'white' }}>
+                <Content style={{ padding: '60px 20px', background: 'white' }} >
                   <Flex
                     justify="center"
                     vertical

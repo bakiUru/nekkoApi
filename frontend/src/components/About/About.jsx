@@ -4,7 +4,7 @@ import './about.css'
 
 function About() {
     return (
-        <div className="about-container">
+        <div className="about-container" id="about">
             <Flex vertical>
                 <h2>¿Quienes Somos?</h2>
                 <div className="about-text">

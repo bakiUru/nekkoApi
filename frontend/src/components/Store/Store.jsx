@@ -5,7 +5,7 @@ import './store.css'
 function Store() {
     return (
         <div className="store-container">
-            <h2>Tienda</h2>
+            <h2 id="store">Tienda</h2>
             <div className="store-content">
                 <p className="store-message">
                     ¡Próximamente! Estamos preparando nuestra tienda online con productos increíbles para vos.

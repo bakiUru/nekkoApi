@@ -49,7 +49,7 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div>
             <Carousel autoplay infinite={true} autoplaySpeed={2000} className='corrusel'>
                 {images.length > 0 ? (
                     images.map((img, index) => (
@@ -64,7 +64,7 @@ const Home = () => {
                 )}
             </Carousel>
             <br />
-        </>
+        </div>
     );
 };
 

@@ -83,6 +83,8 @@
     .cancel-button {
         width: 100%;
         padding: 12px;
+        margin-inline-start: 0px;
+        margin-bottom: 10px;
         font-size: 0.75rem;
     }
 }

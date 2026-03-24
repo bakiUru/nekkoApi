@@ -60,6 +60,10 @@ const NavBar = () => {
 
     // Scroll suave a secciones del home
     const scrollToSection = (id) => {
+        if (id === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            return
+        }
         const section = document.getElementById(id)
         section?.scrollIntoView({ behavior: 'smooth' })
     }
@@ -72,24 +76,11 @@ const NavBar = () => {
         // Siempre volvemos al home
         navigate('/')
 
-        setTimeout(() => {
-            switch (e.key) {
-                case 'home':
-                    scrollToSection('home')
-                    break
-                case 'services':
-                    scrollToSection('services')
-                    break
-                case 'store':
-                    scrollToSection('store')
-                    break
-                case 'contact':
-                    scrollToSection('contact')
-                    break
-                default:
-                    break
-            }
-        }, 100)
+        if (e.key !== 'instagram') {
+            setTimeout(() => {
+                scrollToSection(e.key)
+            }, 50)
+        }
     }
 
     // Menú usuario
@@ -103,7 +94,7 @@ const NavBar = () => {
 
 
     return (
-        <div className="containerNav">
+        <div className="containerNav" >
             {/* Botón hamburguesa - solo visible en móvil */}
             <button
                 className="hamburger-button"

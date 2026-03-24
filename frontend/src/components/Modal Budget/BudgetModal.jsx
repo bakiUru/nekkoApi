@@ -125,6 +125,7 @@ const stylesFn = info => {
                 border: '1px solid #ccc',
                 padding: 0,
                 overflow: 'hidden',
+                margin: 0,
             },
             header: {
                 padding: 16,
@@ -133,7 +134,7 @@ const stylesFn = info => {
                 padding: 16,
             },
             footer: {
-                padding: '16px 10px',
+                padding: '16px 20px 20px 20px',
                 backgroundColor: '#fafafa',
             },
         };
@@ -179,12 +180,6 @@ const BudgetModal = ({ service, open, onOk, onCancel }) => {
     const footer = (
         <>
             <Button
-                onClick={onCancel}
-                className="cancel-button"
-            >
-                Cancelar
-            </Button>
-            <Button
                 type="primary"
                 className="budget-button"
                 onClick={() => {
@@ -193,6 +188,12 @@ const BudgetModal = ({ service, open, onOk, onCancel }) => {
                 }}
             >
                 Enviar
+            </Button>
+            <Button
+                onClick={onCancel}
+                className="cancel-button"
+            >
+                Cancelar
             </Button>
         </>
     );

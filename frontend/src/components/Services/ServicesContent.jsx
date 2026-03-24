@@ -67,7 +67,7 @@ function ServicesContent() {
                 <Card key={service.title} className="service-card" styles={{ body: { padding: 0, overflow: 'hidden' } }}>
                     <Flex justify="space-between">
 
-                        {id % 2 === 0 ? (
+                        {isMobile || (id % 2 === 0) ? (
                             <img
                                 draggable={false}
                                 alt={service.title}
@@ -97,7 +97,7 @@ function ServicesContent() {
                                 Cotización
                             </Button>
                         </Flex>
-                        {id % 2 !== 0 ? (
+                        {id % 2 !== 0 && !isMobile ? (
                             <img
                                 draggable={false}
                                 alt={service.title}

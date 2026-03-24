@@ -16,7 +16,7 @@ const ImagesGallery = ({ images, numImages }) => {
                     <Space>
                         <Image
                             className='image_gallery'
-                            style={{ maxWidth: '250px', height: '250px' }}
+                            style={{ maxWidth: '350px', height: '350px', borderRadius: '16px', padding: '5px' }}
                             alt={image.title}
                             src={image.image}
                             preview={{

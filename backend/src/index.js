@@ -10,6 +10,7 @@ app.listen(PORT, async()=>{
     //conexion a la BD
     try{
         //Funcion de conexion con la BD
+        
     }catch(e){
         console.log("Error de conexion con la BD")
     }
@@ -18,3 +19,12 @@ app.listen(PORT, async()=>{
 app.get('/', async (req,res)=>{
     res.send("Conectado al Servidor").status(200)
 })
+
+app.get('/api', async (req,res)=>{
+    res.send("Rutas de la API").status(200)
+})
+
+
+
+
+

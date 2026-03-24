@@ -71,6 +71,7 @@ const Gallery = () => {
 
     return (
         <Content
+            id="gallery"
             ref={sectionRef}
             className={`gallery_section ${isVisible ? 'gallery_section_visible' : ''}`}
         >

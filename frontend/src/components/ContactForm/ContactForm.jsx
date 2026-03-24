@@ -11,7 +11,7 @@ const ContactForm = () => {
     }
 
     return (
-        <section className="contact-section">
+        <section id="contact" className="contact-section">
             <Flex vertical align="center">
                 <Title level={2} className="contact-title">
                     Contacto
